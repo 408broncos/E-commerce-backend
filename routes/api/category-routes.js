@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ['category_id', 'price', 'product_nam', 'stock', 'id']
+        attributes: ['category_id', 'price', 'product_name', 'stock', 'id']
       }
     ]
   })
@@ -76,6 +76,7 @@ router.put('/:id', (req, res) => {
 
 
 router.delete('/:id', (req, res) => {
+  // delete a category by its `id` value
   Category.destroy({
     where: {
         id: req.params.id
